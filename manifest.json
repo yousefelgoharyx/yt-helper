@@ -1,0 +1,12 @@
+{
+  "name": "YT Helper",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions":["activeTab"],
+
+  "browser_action": {
+    "default_title": "YT",
+    "default_popup": "popup/popup.html"
+  }
+}

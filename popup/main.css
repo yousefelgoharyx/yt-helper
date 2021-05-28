@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #111;
+  color: #fff;
+  width: 300px;
+  padding: 16px;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+input {
+  background-color: #222;
+  border: 1px solid #222;
+  height: 40px;
+  padding: 0 12px;
+  outline: #333;
+  color: #fff;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+}
+button {
+  background-color: #222;
+  border: 1px solid #222;
+  height: 40px;
+  padding: 0 12px;
+  outline: #333;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Poppins";
+}
+button,.time-point{
+
+    transition: background-color 0.1s ease-in-out;
+}
+button:active ,.time-point:active{
+  background-color: #252525;
+}
+
+#desc{
+    border-radius: 8px;
+}
+
+.library h1,
+.controls h1 {
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.time-points {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.time-point {
+  padding: 12px;
+  background-color: #222;
+  cursor: pointer;
+}
+.time-point h3 {
+  font-size: 12px;
+  opacity: 0.5;
+  user-select: none;
+}
+.time-point p{
+    user-select: none;
+}
+.time {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.control {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 2px;
+}
+.control button {
+  width: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
