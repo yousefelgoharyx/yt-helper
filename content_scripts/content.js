@@ -3,8 +3,8 @@
     return;
   }
   window.hasRun = true;
-
-  browser.runtime.onMessage.addListener((time) => {
-    document.querySelector("video").currentTime = time;
+  browser.runtime.onMessage.addListener((time,sender,repsond) => {
+    document.querySelector("video").currentTime = time.timePoint;
+    repsond("Done")
   });
 })();

@@ -13,30 +13,32 @@ async function isYoutube() {
   return false;
 }
 
-function main() {
-  // if (!(await isYoutube())) {
-  //   document.body.innerHTML = "This is not youtube";
-  //   return 0;
-  // }
+async function main() {
+  if (!(await isYoutube())) {
+    document.body.innerHTML = "This is not youtube";
+    return 0;
+  }
 
   const goButton = document.querySelector("#changeTime");
   const hrsInput = document.querySelector("#hrs");
   const minsInput = document.querySelector("#mins");
   const secsInput = document.querySelector("#secs");
-  const timePoint =
-    Number(hrsInput.value) * 60 * 60 +
-    Number(minsInput.value) * 60 +
-    Number(secsInput.value);
+
   goButton.addEventListener("click", () => {
+    const timePoint =
+      Number(hrsInput.value) * 60 * 60 +
+      Number(minsInput.value) * 60 +
+      Number(secsInput.value);
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-      console.log("hey");
-      browser.tabs.sendMessage(tabs[0].id, {
-        timePoint
-      });
+      browser.tabs
+        .sendMessage(tabs[0].id, {
+          timePoint,
+        })
+        .then((res) => console.log(res));
     });
   });
 }
 browser.tabs
   .executeScript({ file: "/content_scripts/content.js" })
   .then(main)
-  .catch(() => console.log("heyerror"));
+  .catch(() => console.log("error"));
